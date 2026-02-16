@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="icon" type="image/png" href="https://lofrev.net/wp-content/photos/2016/06/amazon-logo-1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #EAEDED;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 60px;
+            background: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: 120px;
+        }
+
+
+
+
+        .border {
+            border: 1px solid transparent;
+            padding: 5px;
+        }
+
+        .border:hover {
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .nav-address p:first-child {
+            font-size: 0.7rem;
+            color: #ccc;
+        }
+
+        .nav-address p:last-child {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+
+        .nav-search {
+            display: flex;
+            width: 50%;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-select {
+            width: 50px;
+            background: #f3f3f3;
+            border: none;
+            padding-left: 5px;
+        }
+
+        .search-input {
+            width: 100%;
+            border: none;
+            padding-left: 10px;
+            font-size: 1rem;
+        }
+
+        .search-icon {
+            width: 45px;
+            background: #febd69;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+
+        .nav-signin p:first-child,
+        .nav-returns p:first-child {
+            font-size: 0.7rem;
+        }
+
+        .nav-signin p:last-child,
+        .nav-returns p:last-child {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+
+        .nav-cart {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+
+
+        .panel {
+            height: 40px;
+            background: #232f3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .panel-options :hover {
+            border: 2px solid white;
+            border-radius: 3px;
+            box-shadow: 0 0 5px white;
+            padding: 6px;
+        }
+
+        .panel-options p {
+            display: inline;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae');
+            height: 350px;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-msg {
+            background: white;
+            padding: 10px 20px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            width: 80%;
+            text-align: center;
+        }
+
+
+
+        .shop-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .box {
+            background: white;
+            height: 400px;
+            width: 23%;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .box:hover {
+            background: rgb(246, 170, 190);
+            color: rgb(98, 88, 23);
+            height: 420px;
+            width: 25%;
+
+        }
+
+
+
+        .box h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .box-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .box p {
+            color: #007185;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+
+
+        footer {
+            margin-top: 30px;
+        }
+
+        .foot-panel1 {
+            background: #37475a;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .foot-panel2 {
+            background: #232f3e;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 30px 0;
+        }
+
+        .foot-panel2 ul {
+            list-style: none;
+        }
+
+        .foot-panel2 ul p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .foot-panel2 ul li {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        .foot-panel3 {
+            background: #131921;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8rem;
+        }
+
+        .buy:hover {
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgb(245, 244, 244);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <div class="nav-logo border">
+                <div class="logo"><img src="C:\Users\swara\Downloads\amz1.webp"></div>
+            </div>
+
+            <div class="nav-address border">
+                <p>Deliver to</p>
+                <p>India</p>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">🔍</div>
+            </div>
+
+            <div class="nav-signin border">
+                <p>Hello, sign in</p>
+                <p>Account & Lists</p>
+            </div>
+
+            <div class="nav-returns border">
+                <p>Returns</p>
+                <p>& Orders</p>
+            </div>
+
+            <div class="nav-cart border">
+                🛒 Cart
+            </div>
+
+        </div>
+
+        <div class="panel">
+            <div class="panel-options">
+                <p>All</p>
+
+                <p>Today's Deals</p>
+                <p>Buy Again</p>
+                <p>Fresh</p>
+                <p>Jwellery</p>
+                <p>Kids</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Amazon Basics</p>
+                <p>Sell</p>
+                <p>Home Improvement</p>
+                <p>Books</p>
+                <p>Mobiles</p>
+                <p>New Releases</p>
+                <p>Fashion</p>
+                <p>Amazon Pay</p>
+                <p>MX Player</p>
+                <p>Customer services</p>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-msg">
+            🛒✨ Welcome to Amazon.com ✨🛒
+            <br>
+            🚀You're currently shopping on Amazon.com 🇺🇸 — your one-stop destination for everything you need!🚀
+        </div>
+    </div>
+
+    <div class="shop-section">
+
+
+        <div class="box">
+            <h2>Grocery</h2>
+            <div class="box-img"
+                style="background-image:url('https://tse4.mm.bing.net/th/id/OIP.LaPA-DlLyDsrN9JYuRlICQHaEJ?pid=Api&P=0&h=180')">
+            </div>
+            <p>See more</p>
+        </div>
+
+        <div class="box">
+            <h2>Fashion</h2>
+            <div class="box-img"
+                style="background-image:url('https://static.vecteezy.com/system/resources/previews/017/109/630/non_2x/women-s-fashion-flat-lay-stylish-female-clothes-straw-hat-blue-dress-rattan-bag-sandals-photo.jpg')">
+            </div>
+            <p>Shop now</p>
+        </div>
+
+        <div class="box">
+            <h2>Home & Kitchen</h2>
+            <div class="box-img"
+                style="background-image:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7')"></div>
+            <p>Discover more</p>
+        </div>
+
+        <div class="box">
+            <h2>Beauty Picks</h2>
+            <div class="box-img"
+                style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348')"></div>
+            <p>Explore</p>
+        </div>
+        <div class="box">
+            <h2>Electronics</h2>
+            <div class="box-img"
+                style="background-image:url('https://static1.bigstockphoto.com/4/5/2/large1500/25412846.jpg')">
+            </div>
+            <p>Explore</p>
+        </div>
+        <div class="box">
+            <h2>Toys</h2>
+            <div class="box-img"
+                style="background-image:url('https://tse3.mm.bing.net/th/id/OIP.1zMB38mbeT4zXt89-2cJqgHaEJ?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3')">
+            </div>
+            <p>Shop now</p>
+        </div>
+        <div class="box">
+            <h2>Stationary</h2>
+            <div class="box-img"
+                style="background-image:url('https://th.bing.com/th/id/R.0e9d63e1fb8149dc17f9a4e5d2f3030b?rik=mcA50SmdAijRqQ&pid=ImgRaw&r=0')">
+            </div>
+            <p>Explore</p>
+        </div>
+        <div class="box">
+            <h2>Sports Accessories</h2>
+            <div class="box-img"
+                style="background-image:url('https://tse1.explicit.bing.net/th/id/OIP.o8Dr7nbvD1KWCqRw2CugEgAAAA?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3')">
+            </div>
+            <p>Explore</p>
+        </div>
+
+
+
+
+    </div>
+    <div style="background:#232f3e;color:white;padding:30px;text-align:center;">
+        <h2>Join Prime Today</h2>
+        <br>
+        <p>Fast, FREE delivery, exclusive deals & more</p>
+        <br>
+        <button class="buy"
+            style="margin-top:15px;padding:10px 20px;background:#febd69;border:none;border-radius:4px;cursor:pointer;">
+            Try Prime
+        </button>
+    </div>
+
+
+    <footer>
+        <div class="foot-panel1">
+            Back to Top
+        </div>
+        <br>
+        <div class="foot-panel3">
+            <p>Conditions of Use | Privacy Notice | Help</p>
+            <p>© 2026 Amazon Clone | Designed for Educational Purpose</p>
+        </div>
+
+
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <li>Careers</li>
+                <li>Blog</li>
+                <li>About Amazon</li>
+                <li>Investor Relations</li>
+            </ul>
+
+            <ul>
+                <p>Make Money with Us</p>
+                <li>Sell products</li>
+                <li>Become an Affiliate</li>
+                <li>Advertise Your Products</li>
+                <li>Self-Publish</li>
+            </ul>
+
+            <ul>
+                <p>Amazon Payment Products</p>
+                <li>Amazon Business Card</li>
+                <li>Shop with Points</li>
+                <li>Reload Your Balance</li>
+                <li>Currency Converter</li>
+            </ul>
+        </div>
+
+        <div class="foot-panel3">
+            © 2026 Amazon Clone | Designed for Educational Purpose
+        </div>
+    </footer>
+
+</body>
+
+</html>
